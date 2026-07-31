@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ProductManagementSystem {
     
     // 商品陣列
-    private static Product[] products = new Product[10];
+    private static Product1[] products = new Product1[10];
     private static int productCount = 0;
     
     // 操作統計
@@ -75,11 +75,11 @@ public class ProductManagementSystem {
      */
     public static void initializeProducts() {
         try {
-            products[0] = new Product("Keyboard", 890, 12);
-            products[1] = new Product("Mouse", 490, 20);
-            products[2] = new Product("Monitor", 5200, 5);
-            products[3] = new Product("USB Cable", 250, 30);
-            products[4] = new Product("Headset", 1290, 8);
+            products[0] = new Product1("Keyboard", 890, 12);
+            products[1] = new Product1("Mouse", 490, 20);
+            products[2] = new Product1("Monitor", 5200, 5);
+            products[3] = new Product1("USB Cable", 250, 30);
+            products[4] = new Product1("Headset", 1290, 8);
             productCount = 5;
             System.out.println("已初始化 5 項商品，尚有 5 個空間可新增\n");
         } catch (IllegalArgumentException e) {
@@ -117,7 +117,7 @@ public class ProductManagementSystem {
         System.out.println("----\t--------\t\t----\t----\t----\t------");
         
         for (int i = 0; i < productCount; i++) {
-            Product p = products[i];
+            Product1 p = products[i];
             System.out.printf("%d\t%-15s\t%d\t%d\t%d\t%s\n", 
                             (i + 1), 
                             p.getName(), 
@@ -142,7 +142,7 @@ public class ProductManagementSystem {
         
         System.out.println("=== 搜尋結果 ===");
         for (int i = 0; i < productCount; i++) {
-            Product p = products[i];
+            Product1 p = products[i];
             String normalizedName = normalizeString(p.getName());
             if (normalizedName.equals(normalizedKeyword)) {
                 System.out.println("找到商品！");
@@ -199,7 +199,7 @@ public class ProductManagementSystem {
         sc.nextLine();
         
         try {
-            Product newProduct = new Product(name, price, stock);
+            Product1 newProduct = new Product1(name, price, stock);
             products[productCount] = newProduct;
             productCount++;
             totalAdditions++;
@@ -222,7 +222,7 @@ public class ProductManagementSystem {
             return;
         }
         
-        Product p = products[index];
+        Product1 p = products[index];
         System.out.println("商品：" + p.getName());
         System.out.println("目前庫存：" + p.getStock());
         System.out.print("請輸入出售數量：");
@@ -249,7 +249,7 @@ public class ProductManagementSystem {
             return;
         }
         
-        Product p = products[index];
+        Product1 p = products[index];
         System.out.println("商品：" + p.getName());
         System.out.println("目前庫存：" + p.getStock());
         System.out.print("請輸入補充數量：");
@@ -275,7 +275,7 @@ public class ProductManagementSystem {
             return;
         }
         
-        Product p = products[index];
+        Product1 p = products[index];
         System.out.println("商品：" + p.getName());
         System.out.println("目前價格：" + p.getPrice());
         System.out.print("請輸入新價格（必須大於0）：");
@@ -302,7 +302,7 @@ public class ProductManagementSystem {
         System.out.println("----\t--------\t\t----");
         
         for (int i = 0; i < productCount; i++) {
-            Product p = products[i];
+            Product1 p = products[i];
             if (p.isLowStock()) {
                 System.out.printf("%d\t%-15s\t%d\n", 
                                 (i + 1), p.getName(), p.getStock());
@@ -332,7 +332,7 @@ public class ProductManagementSystem {
         System.out.println("----\t--------\t\t----\t----\t----");
         
         for (int i = 0; i < productCount; i++) {
-            Product p = products[i];
+            Product1 p = products[i];
             int subtotal = p.getInventoryValue();
             totalValue += subtotal;
             System.out.printf("%d\t%-15s\t%d\t%d\t%d\n", 
@@ -357,7 +357,7 @@ public class ProductManagementSystem {
         // 顯示各商品庫存狀態
         System.out.println("\n各商品庫存狀態：");
         for (int i = 0; i < productCount; i++) {
-            Product p = products[i];
+            Product1 p = products[i];
             System.out.printf("  %s：%d 件 %s\n", 
                             p.getName(), 
                             p.getStock(),

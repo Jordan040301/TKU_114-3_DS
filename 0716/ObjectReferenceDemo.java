@@ -1,7 +1,7 @@
 public class ObjectReferenceDemo {
     public static void main(String[] args) {
-        Product first = new Product("Mouse", 490, 20);
-        Product second = first;
+        Product1 first = new Product1("Mouse", 490, 20);
+        Product1 second = first;
 
         second.restock(5);
 

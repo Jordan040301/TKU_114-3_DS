@@ -9,9 +9,9 @@ public class ProductDemo {
         
         // 建立多個商品
         System.out.println("=== 建立商品 ===");
-        Product product1 = new Product("Keyboard", 890, 12);
-        Product product2 = new Product("Mouse", 490, 20);
-        Product product3 = new Product("Monitor", 5200, 5);
+        Product1 product1 = new Product1("Keyboard", 890, 12);
+        Product1 product2 = new Product1("Mouse", 490, 20);
+        Product1 product3 = new Product1("Monitor", 5200, 5);
         
         System.out.println("商品1：" + product1);
         System.out.println("商品2：" + product2);
@@ -63,7 +63,7 @@ public class ProductDemo {
     /**
      * 測試 Getter 方法
      */
-    public static void testGetters(Product product) {
+    public static void testGetters(Product1 product) {
         System.out.println("商品名稱：" + product.getName());
         System.out.println("商品價格：" + product.getPrice());
         System.out.println("庫存數量：" + product.getStock());
@@ -74,7 +74,7 @@ public class ProductDemo {
     /**
      * 測試 setPrice 方法
      */
-    public static void testSetPrice(Product product) {
+    public static void testSetPrice(Product1 product) {
         System.out.println("原價：" + product.getPrice());
         
         // 成功設定價格
@@ -102,7 +102,7 @@ public class ProductDemo {
     /**
      * 測試 restock 方法
      */
-    public static void testRestock(Product product) {
+    public static void testRestock(Product1 product) {
         System.out.println("目前庫存：" + product.getStock());
         
         // 成功補充
@@ -121,7 +121,7 @@ public class ProductDemo {
     /**
      * 測試 sell 方法
      */
-    public static void testSell(Product product) {
+    public static void testSell(Product1 product) {
         System.out.println("目前庫存：" + product.getStock());
         
         // 成功銷售
@@ -144,7 +144,7 @@ public class ProductDemo {
     /**
      * 測試 isLowStock 方法
      */
-    public static void testLowStock(Product product1, Product product2) {
+    public static void testLowStock(Product1 product1, Product1 product2) {
         System.out.println("商品：" + product1.getName() + "，庫存：" + product1.getStock());
         System.out.println("是否低庫存：" + (product1.isLowStock() ? "是" : "否"));
         
@@ -155,7 +155,7 @@ public class ProductDemo {
     /**
      * 測試 getInventoryValue 方法
      */
-    public static void testInventoryValue(Product product) {
+    public static void testInventoryValue(Product1 product) {
         System.out.println("商品：" + product.getName());
         System.out.println("單價：" + product.getPrice());
         System.out.println("庫存：" + product.getStock());
@@ -169,7 +169,7 @@ public class ProductDemo {
         // 測試名稱空白
         try {
             System.out.println("嘗試建立名稱為空白的商品...");
-            Product invalidProduct = new Product("", 100, 10);
+            Product1 invalidProduct = new Product1("", 100, 10);
             System.out.println("建立成功：" + invalidProduct);
         } catch (IllegalArgumentException e) {
             System.out.println("捕獲異常：" + e.getMessage());
@@ -178,7 +178,7 @@ public class ProductDemo {
         // 測試名稱 null
         try {
             System.out.println("嘗試建立名稱為 null 的商品...");
-            Product invalidProduct = new Product(null, 100, 10);
+            Product1 invalidProduct = new Product1(null, 100, 10);
             System.out.println("建立成功：" + invalidProduct);
         } catch (IllegalArgumentException e) {
             System.out.println("捕獲異常：" + e.getMessage());
@@ -187,7 +187,7 @@ public class ProductDemo {
         // 測試價格為0
         try {
             System.out.println("嘗試建立價格為 0 的商品...");
-            Product invalidProduct = new Product("Test", 0, 10);
+            Product1 invalidProduct = new Product1("Test", 0, 10);
             System.out.println("建立成功：" + invalidProduct);
         } catch (IllegalArgumentException e) {
             System.out.println("捕獲異常：" + e.getMessage());
@@ -196,7 +196,7 @@ public class ProductDemo {
         // 測試價格為負數
         try {
             System.out.println("嘗試建立價格為 -50 的商品...");
-            Product invalidProduct = new Product("Test", -50, 10);
+            Product1 invalidProduct = new Product1("Test", -50, 10);
             System.out.println("建立成功：" + invalidProduct);
         } catch (IllegalArgumentException e) {
             System.out.println("捕獲異常：" + e.getMessage());
@@ -205,7 +205,7 @@ public class ProductDemo {
         // 測試庫存為負數
         try {
             System.out.println("嘗試建立庫存為 -5 的商品...");
-            Product invalidProduct = new Product("Test", 100, -5);
+            Product1 invalidProduct = new Product1("Test", 100, -5);
             System.out.println("建立成功：" + invalidProduct);
         } catch (IllegalArgumentException e) {
             System.out.println("捕獲異常：" + e.getMessage());
